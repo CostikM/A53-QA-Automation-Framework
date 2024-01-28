@@ -80,17 +80,16 @@ public class LoginTests extends BaseTest {
 //        Assert.assertTrue(homePage.getUserAvatarIcon().isDisplayed());
 //    }
 //
-//    @Test
-//    public void loginWithInCorrectCredentials(){
-//        LoginPage loginPage = new LoginPage(driver);
-//        HomePage homePage = new HomePage(driver);
-//
-//        loginPage.provideEmail("demo1@class.com");
-//        loginPage.providePassword("test$tudent");
-//        loginPage.clickSubmit();
-//
-//        Assert.assertTrue(homePage.getUserAvatarIcon().isDisplayed());
-//    }
+   @Test
+   public void loginWithInCorrectCredentials(){
+       LoginPage loginPage = new LoginPage(driver);
+       HomePage homePage = new HomePage(driver);
+       loginPage.provideEmail("demo1@class.com");
+       loginPage.providePassword("test$tudent");
+       loginPage.clickSubmit();
+
+      Assert.assertTrue(homePage.getUserAvatarIcon().isDisplayed());
+ }
 //
 //    /**
 //     * Login using Page Factory Elements and Fluent Interface.
