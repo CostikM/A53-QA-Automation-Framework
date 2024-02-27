@@ -14,6 +14,6 @@ public class Homework22 extends BaseTest{
         loginPage.providePassword("te$t$tudent");
         loginPage.clickSubmit();
 
-        Assert.assertTrue(homepage.getUserAvatar().isDisplayed());
-    }
+        Assert.assertTrue(homepage.getUserAvatarIcon().isDisplayed());
+   }
 }
