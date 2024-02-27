@@ -1,12 +1,14 @@
+import POM.AllSongsPage;
+import POM.BasePage;
+import POM.HomePage;
+import POM.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import javax.crypto.KeyAgreementSpi;
 import java.util.List;
 
 
@@ -23,6 +25,21 @@ public class PlaySong extends BaseTest {
         contextClickFirstSong();
         choosePlayOption();
         Assert.assertTrue(isSongPlaying());
+    }
+    @Test
+    public void playSongByRightClick () throws InterruptedException{
+        LoginPage loginPage = new LoginPage(driver);
+        HomePage homePage = new HomePage(driver);
+        AllSongsPage allSongsPage = new AllSongsPage(driver);
+        BasePage basePage = new BasePage(driver);
+        //Login
+        loginPage.login();
+        //homePage.allSongsList();
+        homePage.goToAllSongsList();
+        allSongsPage.contextClickFirstSong();
+        allSongsPage.choosePlayOption();
+        //Assertions
+        Assert.assertTrue(basePage.isSongPlaying());
     }
 @Test
 public void countSongsInPlaylist() throws InterruptedException {
@@ -51,6 +68,7 @@ public void renamePlaylist() throws InterruptedException{
     Assert.assertEquals(getRenamePlaylistSuccessMsg(),updatePlaylistMsg);
         
 }
+
 
     public void doubleClickPlaylist() {
         WebElement playlistElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".playlist:nth-child(3)")));

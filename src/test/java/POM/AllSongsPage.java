@@ -15,7 +15,7 @@ public class AllSongsPage extends BasePage{
 
     By firstSongInAllSongs = By.cssSelector(".all-songs tr.song-item:nth-child(1)");
 
-    By playBtnInContextMenu = By.cssSelector("li.playback");
+    By playBtnInContextMeny = By.cssSelector("li.playback");
 
     //Methods
 
@@ -31,7 +31,7 @@ public class AllSongsPage extends BasePage{
 
     public void choosePlayOption() throws InterruptedException{
         wait.until(ExpectedConditions
-                .visibilityOfElementLocated(playBtnInContextMenu)).click();
+                .visibilityOfElementLocated(playBtnInContextMeny)).click();
     }
 
 
