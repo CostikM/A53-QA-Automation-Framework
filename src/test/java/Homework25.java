@@ -1,28 +1,11 @@
+import POM.HomePage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class LoginTests extends BaseTest {
-    @Parameters({"BaseUrl"})
-    @Test
-    public void navigateToKoelApp(String BaseUrl){
-        navigateToUrl(BaseUrl);
-        Assert.assertEquals(driver.getCurrentUrl(),BaseUrl);//https://qa.koel.app/
-        driver.quit();
-    }
-    @Test (dataProvider = "InvalidLoginData")
-    //@Parameters({"BaseUrl"})
-    public void loginInvalidEmailValidPassword(String email, String password) throws InterruptedException {
-
-        navigateToPage();
-        provideEmail(email);
-        providePassword(password);
-        clickSubmit();
-        Thread.sleep(2000);
-
-        Assert.assertEquals(driver.getCurrentUrl(),url); //https://qa.koel.app/
-    }
-
+public class Homework25 extends BaseTest{
     @Test (enabled = true, priority = 1, description = "Login with valid email and valid password")
     public void loginValidEmailPassword() throws InterruptedException{
 
@@ -30,7 +13,7 @@ public class LoginTests extends BaseTest {
         provideEmail("constantin@moraresco.com");
         providePassword("Nastika20$");
         clickSubmit();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         isAvatarDisplayed();
     }
 
@@ -45,4 +28,5 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), url); //https://qa.koel.app/
     }
 
- }
+}
+
