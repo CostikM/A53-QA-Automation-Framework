@@ -13,7 +13,7 @@ public class Homework25 extends BaseTest{
         provideEmail("constantin@moraresco.com");
         providePassword("Nastika20$");
         clickSubmit();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         isAvatarDisplayed();
     }
 
