@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TestNg" parallel="methods" thread-count="2">
+<suite name="TestNg" parallel="methods" thread-count="1">
     <parameter name="BaseUrl" value="https://qa.koel.app"/>
     <test name="Example Test" preserve-order="false">
 
         <classes>
-            <!--<class name="LoginTests"/>
+            <class name="LoginTests"/>
             <class name="BaseTest"/>
             <class name="ProfileTests"/>
             <class name="Homework17"/>
@@ -16,7 +16,7 @@
             <class name="PlaySong"/>
             <class name="Homework21"/>
             <class name="Homework22"/>
-            <class name="Homework23"/>-->
+            <class name="Homework23"/>-
             <class name="Homework25"/>
         </classes>
     </test>
