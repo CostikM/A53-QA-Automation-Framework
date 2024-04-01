@@ -54,8 +54,12 @@ public class BaseTest {
     @BeforeMethod
     public void launchBrowser(String BaseUrl) throws MalformedURLException {
         //Added ChromeOptions argument below to fix websocket error
-        //ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--remote-allow-origins=*");
+        ChromeOptions options = new ChromeOptions();
+         options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-notifications");
+        options.addArguments("--incognito");
+        options.addArguments("--start-maximized");
+        options.setExperimentalOption( "excludeSwitches",new String[]{"enable-automation"});
         //driver = new ChromeDriver(options);
         //driver = new FirefoxDriver();
         // driver = pickBrowser(System.getProperty("browser"));

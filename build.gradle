@@ -22,13 +22,16 @@ dependencies {
         implementation 'io.cucumber:gherkin:25.0.2'
 
 }
+ext {
+    suite = project.findProperty('suite') ?: 'TestNG'
+}
 
 test {
     useTestNG() {
         //suites "src/test/resources/Regression.xml"
        //suites "src/test/resources/Smoke.xml"
        suites "src/test/resources/TestNg.xml"
-        //suites "src/test/resources/${suite}.xml"
+        suites "src/test/resources/${suite}.xml"
         systemProperty "browser", System.getProperty("browser")
         //systemProperty "suites", System.getProperty("suite")
     }
